@@ -1,0 +1,18 @@
+#include <stddef.h> /*
+""" */
+double entry(double *a, double *b, size_t l) {
+ double s;
+ for(int i=0;i<l;i++) s+=a[i]*b[i];
+ return s;
+}
+int main(){return 0;}
+
+/* """
+
+"\""
+entry=lambda a,b:sum(a*b for a,b in a.zip(b))
+#"
+""""
+Entry ← {+´𝕨×𝕩}
+"""
+#"# */
