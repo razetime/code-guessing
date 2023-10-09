@@ -1,0 +1,298 @@
+title 2048
+author Friedrich Nietzsche
+homepage www.puzzlescript.net
+
+========
+OBJECTS
+========
+
+Background
+#bbada0
+
+Empty
+#bbada0
+
+Two
+#eee4da #776e65 #bbada0
+20000
+20000
+20000
+20010
+22222
+
+Four
+#eee1c9 #776e65 #bbada0
+20000
+20000
+20000
+20100
+22222
+
+Eight
+#f3b27a #f9f6f2 #bbada0
+20000
+20000
+20000
+21000
+22222
+
+Sixteen
+#f69664 #f9f6f2 #bbada0
+20000
+20000
+20001
+20000
+22222
+
+ThirtyTwo
+#f77c5f #f9f6f2 #bbada0
+20000
+20000
+20010
+20000
+22222
+
+SixtyFour
+#f75f3b #f9f6f2 #bbada0
+20000
+20000
+20100
+20000
+22222
+
+OneTwoEight
+#edcf72 #f9f6f2 #bbada0
+20000
+20000
+21000
+20000
+22222
+
+TwoFiveSix
+#edcc61 #f9f6f2 #bbada0
+20000
+20001
+20000
+20000
+22222
+
+FiveOneTwo
+#edc850 #f9f6f2 #bbada0
+20000
+20010
+20000
+20000
+22222
+
+OneZeroTwoFour
+#edc53f #f9f6f2 #bbada0
+20000
+20100
+20000
+20000
+22222
+
+TwoZeroFourEight
+#edc22e #f9f6f2 #bbada0
+20000
+21000
+20000
+20000
+22222
+
+=======
+LEGEND
+=======
+
+. = Background
+E = Empty
+2 = Two
+Spawn = Two or Four
+Player = Two and Four and Eight and Sixteen and ThirtyTwo and SixtyFour and OneTwoEight and TwoFiveSix and FiveOneTwo and OneZeroTwoFour and TwoZeroFourEight
+
+=======
+SOUNDS
+=======
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Empty
+Two
+Four
+Eight
+Sixteen
+ThirtyTwo
+SixtyFour
+OneTwoEight
+TwoFiveSix
+FiveOneTwo
+OneZeroTwoFour
+TwoZeroFourEight
+
+
+======
+RULES
+======
+
+[ > Two | Empty ] -> [ Empty | > Two ]
+[ > Four | Empty ] -> [ Empty | > Four ]
+[ > Eight | Empty ] -> [ Empty | > Eight ]
+[ > Sixteen | Empty ] -> [ Empty | > Sixteen ]
+[ > ThirtyTwo | Empty ] -> [ Empty | > ThirtyTwo ]
+[ > SixtyFour | Empty ] -> [ Empty | > SixtyFour ]
+[ > OneTwoEight | Empty ] -> [ Empty | > OneTwoEight ]
+[ > TwoFiveSix | Empty ] -> [ Empty | > TwoFiveSix ]
+[ > FiveOneTwo | Empty ] -> [ Empty | > FiveOneTwo ]
+[ > OneZeroTwoFour | Empty ] -> [ Empty | > OneZeroTwoFour ]
+[ > TwoZeroFourEight | Empty ] -> [ Empty | > TwoZeroFourEight ]
+
+[ > Two | Four ] -> [ Two | Four ]
+[ > Two | Eight ] -> [ Two | Eight ]
+[ > Two | Sixteen ] -> [ Two | Sixteen ]
+[ > Two | ThirtyTwo ] -> [ Two | ThirtyTwo ]
+[ > Two | SixtyFour ] -> [ Two | SixtyFour ]
+[ > Two | OneTwoEight ] -> [ Two | OneTwoEight ]
+[ > Two | TwoFiveSix ] -> [ Two | TwoFiveSix ]
+[ > Two | FiveOneTwo ] -> [ Two | FiveOneTwo ]
+[ > Two | OneZeroTwoFour ] -> [ Two | OneZeroTwoFour ]
+[ > Two | TwoZeroFourEight ] -> [ Two | TwoZeroFourEight ]
+[ > Four | Two ] -> [ Four | Two ]
+
+[ > Four | Eight ] -> [ Four | Eight ]
+[ > Four | Sixteen ] -> [ Four | Sixteen ]
+[ > Four | ThirtyTwo ] -> [ Four | ThirtyTwo ]
+[ > Four | SixtyFour ] -> [ Four | SixtyFour ]
+[ > Four | OneTwoEight ] -> [ Four | OneTwoEight ]
+[ > Four | TwoFiveSix ] -> [ Four | TwoFiveSix ]
+[ > Four | FiveOneTwo ] -> [ Four | FiveOneTwo ]
+[ > Four | OneZeroTwoFour ] -> [ Four | OneZeroTwoFour ]
+[ > Four | TwoZeroFourEight ] -> [ Four | TwoZeroFourEight ]
+[ > Eight | Two ] -> [ Eight | Two ]
+[ > Eight | Four ] -> [ Eight | Four ]
+
+[ > Eight | Sixteen ] -> [ Eight | Sixteen ]
+[ > Eight | ThirtyTwo ] -> [ Eight | ThirtyTwo ]
+[ > Eight | SixtyFour ] -> [ Eight | SixtyFour ]
+[ > Eight | OneTwoEight ] -> [ Eight | OneTwoEight ]
+[ > Eight | TwoFiveSix ] -> [ Eight | TwoFiveSix ]
+[ > Eight | FiveOneTwo ] -> [ Eight | FiveOneTwo ]
+[ > Eight | OneZeroTwoFour ] -> [ Eight | OneZeroTwoFour ]
+[ > Eight | TwoZeroFourEight ] -> [ Eight | TwoZeroFourEight ]
+[ > Sixteen | Two ] -> [ Sixteen | Two ]
+[ > Sixteen | Four ] -> [ Sixteen | Four ]
+[ > Sixteen | Eight ] -> [ Sixteen | Eight ]
+
+[ > Sixteen | ThirtyTwo ] -> [ Sixteen | ThirtyTwo ]
+[ > Sixteen | SixtyFour ] -> [ Sixteen | SixtyFour ]
+[ > Sixteen | OneTwoEight ] -> [ Sixteen | OneTwoEight ]
+[ > Sixteen | TwoFiveSix ] -> [ Sixteen | TwoFiveSix ]
+[ > Sixteen | FiveOneTwo ] -> [ Sixteen | FiveOneTwo ]
+[ > Sixteen | OneZeroTwoFour ] -> [ Sixteen | OneZeroTwoFour ]
+[ > Sixteen | TwoZeroFourEight ] -> [ Sixteen | TwoZeroFourEight ]
+[ > ThirtyTwo | Two ] -> [ ThirtyTwo | Two ]
+[ > ThirtyTwo | Four ] -> [ ThirtyTwo | Four ]
+[ > ThirtyTwo | Eight ] -> [ ThirtyTwo | Eight ]
+[ > ThirtyTwo | Sixteen ] -> [ ThirtyTwo | Sixteen ]
+
+[ > ThirtyTwo | SixtyFour ] -> [ ThirtyTwo | SixtyFour ]
+[ > ThirtyTwo | OneTwoEight ] -> [ ThirtyTwo | OneTwoEight ]
+[ > ThirtyTwo | TwoFiveSix ] -> [ ThirtyTwo | TwoFiveSix ]
+[ > ThirtyTwo | FiveOneTwo ] -> [ ThirtyTwo | FiveOneTwo ]
+[ > ThirtyTwo | OneZeroTwoFour ] -> [ ThirtyTwo | OneZeroTwoFour ]
+[ > ThirtyTwo | TwoZeroFourEight ] -> [ ThirtyTwo | TwoZeroFourEight ]
+[ > SixtyFour | Two ] -> [ SixtyFour | Two ]
+[ > SixtyFour | Four ] -> [ SixtyFour | Four ]
+[ > SixtyFour | Eight ] -> [ SixtyFour | Eight ]
+[ > SixtyFour | Sixteen ] -> [ SixtyFour | Sixteen ]
+[ > SixtyFour | ThirtyTwo ] -> [ SixtyFour | ThirtyTwo ]
+
+[ > SixtyFour | OneTwoEight ] -> [ SixtyFour | OneTwoEight ]
+[ > SixtyFour | TwoFiveSix ] -> [ SixtyFour | TwoFiveSix ]
+[ > SixtyFour | FiveOneTwo ] -> [ SixtyFour | FiveOneTwo ]
+[ > SixtyFour | OneZeroTwoFour ] -> [ SixtyFour | OneZeroTwoFour ]
+[ > SixtyFour | TwoZeroFourEight ] -> [ SixtyFour | TwoZeroFourEight ]
+[ > OneTwoEight | Two ] -> [ OneTwoEight | Two ]
+[ > OneTwoEight | Four ] -> [ OneTwoEight | Four ]
+[ > OneTwoEight | Eight ] -> [ OneTwoEight | Eight ]
+[ > OneTwoEight | Sixteen ] -> [ OneTwoEight | Sixteen ]
+[ > OneTwoEight | ThirtyTwo ] -> [ OneTwoEight | ThirtyTwo ]
+[ > OneTwoEight | SixtyFour ] -> [ OneTwoEight | SixtyFour ]
+
+[ > OneTwoEight | TwoFiveSix ] -> [ OneTwoEight | TwoFiveSix ]
+[ > OneTwoEight | FiveOneTwo ] -> [ OneTwoEight | FiveOneTwo ]
+[ > OneTwoEight | OneZeroTwoFour ] -> [ OneTwoEight | OneZeroTwoFour ]
+[ > OneTwoEight | TwoZeroFourEight ] -> [ OneTwoEight | TwoZeroFourEight ]
+[ > TwoFiveSix | Two ] -> [ TwoFiveSix | Two ]
+[ > TwoFiveSix | Four ] -> [ TwoFiveSix | Four ]
+[ > TwoFiveSix | Eight ] -> [ TwoFiveSix | Eight ]
+[ > TwoFiveSix | Sixteen ] -> [ TwoFiveSix | Sixteen ]
+[ > TwoFiveSix | ThirtyTwo ] -> [ TwoFiveSix | ThirtyTwo ]
+[ > TwoFiveSix | SixtyFour ] -> [ TwoFiveSix | SixtyFour ]
+[ > TwoFiveSix | OneTwoEight ] -> [ TwoFiveSix | OneTwoEight ]
+
+[ > TwoFiveSix | FiveOneTwo ] -> [ TwoFiveSix | FiveOneTwo ]
+[ > TwoFiveSix | OneZeroTwoFour ] -> [ TwoFiveSix | OneZeroTwoFour ]
+[ > TwoFiveSix | TwoZeroFourEight ] -> [ TwoFiveSix | TwoZeroFourEight ]
+[ > FiveOneTwo | Two ] -> [ FiveOneTwo | Two ]
+[ > FiveOneTwo | Four ] -> [ FiveOneTwo | Four ]
+[ > FiveOneTwo | Eight ] -> [ FiveOneTwo | Eight ]
+[ > FiveOneTwo | Sixteen ] -> [ FiveOneTwo | Sixteen ]
+[ > FiveOneTwo | ThirtyTwo ] -> [ FiveOneTwo | ThirtyTwo ]
+[ > FiveOneTwo | SixtyFour ] -> [ FiveOneTwo | SixtyFour ]
+[ > FiveOneTwo | OneTwoEight ] -> [ FiveOneTwo | OneTwoEight ]
+[ > FiveOneTwo | TwoFiveSix ] -> [ FiveOneTwo | TwoFiveSix ]
+
+[ > FiveOneTwo | OneZeroTwoFour ] -> [ FiveOneTwo | OneZeroTwoFour ]
+[ > FiveOneTwo | TwoZeroFourEight ] -> [ FiveOneTwo | TwoZeroFourEight ]
+[ > OneZeroTwoFour | Two ] -> [ OneZeroTwoFour | Two ]
+[ > OneZeroTwoFour | Four ] -> [ OneZeroTwoFour | Four ]
+[ > OneZeroTwoFour | Eight ] -> [ OneZeroTwoFour | Eight ]
+[ > OneZeroTwoFour | Sixteen ] -> [ OneZeroTwoFour | Sixteen ]
+[ > OneZeroTwoFour | ThirtyTwo ] -> [ OneZeroTwoFour | ThirtyTwo ]
+[ > OneZeroTwoFour | SixtyFour ] -> [ OneZeroTwoFour | SixtyFour ]
+[ > OneZeroTwoFour | OneTwoEight ] -> [ OneZeroTwoFour | OneTwoEight ]
+[ > OneZeroTwoFour | TwoFiveSix ] -> [ OneZeroTwoFour | TwoFiveSix ]
+[ > OneZeroTwoFour | FiveOneTwo ] -> [ OneZeroTwoFour | FiveOneTwo ]
+
+[ > OneZeroTwoFour | TwoZeroFourEight ] -> [ OneZeroTwoFour | TwoZeroFourEight ]
+[ > TwoZeroFourEight | Two ] -> [ TwoZeroFourEight | Two ]
+[ > TwoZeroFourEight | Four ] -> [ TwoZeroFourEight | Four ]
+[ > TwoZeroFourEight | Eight ] -> [ TwoZeroFourEight | Eight ]
+[ > TwoZeroFourEight | Sixteen ] -> [ TwoZeroFourEight | Sixteen ]
+[ > TwoZeroFourEight | ThirtyTwo ] -> [ TwoZeroFourEight | ThirtyTwo ]
+[ > TwoZeroFourEight | SixtyFour ] -> [ TwoZeroFourEight | SixtyFour ]
+[ > TwoZeroFourEight | OneTwoEight ] -> [ TwoZeroFourEight | OneTwoEight ]
+[ > TwoZeroFourEight | TwoFiveSix ] -> [ TwoZeroFourEight | TwoFiveSix ]
+[ > TwoZeroFourEight | FiveOneTwo ] -> [ TwoZeroFourEight | FiveOneTwo ]
+[ > TwoZeroFourEight | OneZeroTwoFour ] -> [ TwoZeroFourEight | OneZeroTwoFour ]
+
+[ > Two | Two ] -> [ Empty | Four ]
+[ > Four | Four ] -> [ Empty | Eight ]
+[ > Eight | Eight ] -> [ Empty | Sixteen ]
+[ > Sixteen | Sixteen ] -> [ Empty | ThirtyTwo ]
+[ > ThirtyTwo | ThirtyTwo ] -> [ Empty | SixtyFour ]
+[ > SixtyFour | SixtyFour ] -> [ Empty | OneTwoEight ]
+[ > OneTwoEight | OneTwoEight ] -> [ Empty | TwoFiveSix ]
+[ > TwoFiveSix | TwoFiveSix ] -> [ Empty | FiveOneTwo ]
+[ > FiveOneTwo | FiveOneTwo ] -> [ Empty | OneZeroTwoFour ]
+[ > OneZeroTwoFour | OneZeroTwoFour ] -> [ Empty | TwoZeroFourEight ]
+
+
+random [ Empty ] -> [ random Spawn ]
+
+==============
+WINCONDITIONS
+==============
+Some TwoZeroFourEight
+
+=======
+LEVELS
+=======
+
+2EEE
+EEEE
+EEEE
+EEEE
