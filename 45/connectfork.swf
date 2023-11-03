@@ -1,0 +1,101 @@
+// right into the wall socket 🥺
+
+extension String: Error {}
+let verbose: Bool = CommandLine.arguments.last == "-v"
+
+func display(board: [[Int]]) {
+  for (index, row) in board.enumerated() {
+    for col in row {
+      print("│",terminator:"")
+      if col == 0 {
+        print(" ",terminator:"")
+      } else if col == 1 {
+        print("①",terminator:"")
+      } else {
+        print("❶",terminator:"")
+      }
+    }
+    print("│")
+    if index == 5 {
+      print("└─┴─┴─┴─┴─┴─┴─┘")
+    } else {
+      print("├─┼─┼─┼─┼─┼─┼─┤")
+    }
+  }
+}
+
+func move(board: inout [[Int]], depth: inout [Int], player: Int, col: Int) {
+  board[depth[col]][col] = player
+  depth[col] -= 1
+}
+
+func win(board: [[Int]], depth: [Int], player: Int, col: Int) -> Bool {
+  for (moveRow, moveCol) in [(0,1),(1,0),(-1,0),(0,-1),(1,1),(1,-1),(-1,-1),(-1,1)]{
+    if (0..<4).allSatisfy({board[depth[col] + $0 * moveRow][col + $0 * moveCol] == player}) {
+      return true
+    }
+  }
+  return false
+}
+
+
+var board: [[Int]] = [[Int]](repeating: [Int](repeating: 0, count: 7), count: 6)
+var depth: [Int] = [Int](repeating: 5, count: 7)
+var lPlayer: Int = 2
+var lMove: Int = 0
+if "f" == readLine() {
+  let cMove: Int = (0..<7).filter({depth[$0] > 0}).randomElement()!
+  print(cMove+1)
+  move(board: &board, depth: &depth, player: 2, col: cMove)
+  lPlayer = 2
+  lMove = cMove
+}
+while !win(board: board, depth: depth, player: lPlayer, col: lMove) {
+  switch lPlayer {
+    case 2:
+      if verbose {
+        print("Enter move: ", terminator: "")
+      }
+      if let StrMove = readLine() {
+        if let tMove = Int(StrMove) {
+          lMove = tMove-1
+        }
+      } else {
+        if verbose {
+          print("invalid move! :3")
+        }
+        continue
+      }
+      if depth[lMove] == 0 {
+        if verbose {
+          print("Column \(lMove) is full.")
+        }
+        continue
+      }
+      move(board: &board, depth: &depth, player: 1, col: lMove)
+      lPlayer = 1
+    case 1:
+      if verbose {
+        print("Computer move: ", terminator: "")
+      }
+      let cMove: Int = (0..<7).filter({depth[$0] > 0}).randomElement()!
+      print(cMove+1)
+      if verbose {
+        display(board: board)
+      }
+      move(board: &board, depth: &depth, player: 2, col: cMove)
+      lPlayer = 2
+      lMove = cMove
+    default:
+      print("zoinks!")
+      throw "oopsies!"
+  }
+}
+switch lPlayer {
+  case 1:
+    print("You Win!")
+  case 2:
+    print("Computer Wins!")
+  default:
+    print("]¥ÍH›ØáôPS Wins!")
+}
